@@ -1,0 +1,50 @@
+Email("ECE250"): ladan.tahvildari@uwaterloo.ca  
+In-Person Office Hours: Every Thu, 12:30-1:30pm; EIT-4136
+
+Mojtaba Ajami (PhD): mojtaba.aajami@uwaterloo.ca
+In-Person Office Hours: Every Fri, 12:30-1-30pm; E2-2360A
+
+Schzhe Lin (PhD Student): s222lin@uwaterloo.ca
+OH: Tue, 12:30-1:30p; E2 3339
+
+Majid Dashtbani: mdashtb@uwaterloo.ca
+Wed 12:30-1:30pm
+
+
+Recommendeed Books:
+Cormen, Lieserson, Rivestm Stein (Main Book)
+Introduction to algorithms
+
+Mark Allen Weiss
+Data structures and algorithm Analysis in C++
+
+Monday September 8th:
+    Project guidelines + C++
+
+Topics:
+    Asymptotic and Algorithm Analysis (6hrs)
+    § Elementary Data Structures (2hrs)
+    § Hashing (3hrs)
+    § Search Trees, Balanced BSTs, B-Trees (7hrs)
+    § Heaps, Priority Queues (2hr)
+    § Sorting Algorithms (3hrs)
+    § Algorithmic Paradigms (4hrs)
+    § Graphs (7hrs)
+    § NP-Completeness (2hrs)
+
+Midterm
+
+Course projects:
+Design: (1% foreach project)
+(2-3 pages) Describe your Designoutline any design decisions you made
+Typed up for marking submitted with solution
+
+PRogramming: (2%-6%)
+C++, auto grader
+
+Due 11pm sharp Monday: Sept 22, oct 6, Nov 3, Nov 17, Dec 1
+
+Lab Quizzes (2%):
+Each lab has a quiz, C++ mcq
+
+https://www.learncpp.com/

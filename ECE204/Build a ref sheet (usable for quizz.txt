@@ -1,0 +1,12 @@
+Build a ref sheet (usable for quizzes/midterms/final)
+- Include methods/algorithms
+  - Names
+  - Implementations (pseudo code/plain English, mathematical expressions, Diagram/illustration, code C++, use specific numbers (examples) )
+  - Strengths and weaknesses of algorithms (time complexity)
+  - Improve or modify method.
+  - 
+
+  Use of AI/LLMs
+  - explain in simpler terms
+  - ask for feedback
+  

@@ -1,0 +1,15 @@
+Labs mandatory
+
+tutorials:
+non-lab weeks: TA office hours 
+Lab Weeks: Discuss problem sets in regular classroom.
+
+Office Hours: Monday 11:30 - 12:20PM; E7 5424
+
+Quizzes 10MC/TF Monday-Wed
+
+https://uwaterloo.ca/scholar/z399huan/ece222 
+
+Motivation:
+- Learn how high-level code is actually executed by the hardware.
+- Learn assembly
