@@ -3,14 +3,14 @@
 @ Convert this C code to assembly
 @ struct Point {
 @     int x; // Offset: 0
-@     int y; // Offset: 4
+@     int y; // Offset: 4  offset = where it is in memory
 @ };
 
 @ Assume:
 @ Address of Point 'p1' is in 's0'
 @ Address of Point 'p2' is in 's1'
 
-@ p2.x = p1.x;
+@ p2.x = p1.x; // p2 and p1 are structs
 
 lw t0, 0(s0)      @ Load p1.x into t0 offset 0
 sw t0, 4(s1)      @ Store t0 into p2.x offset 4
@@ -23,7 +23,7 @@ sw t0, 4(s1)      @ Store t0 into p2.x offset 4
 @ Value of 'p' is currently ox1000
 
 @ int j = *p;
-@ p++;
+@ p++; // incrementing a pointer
 @ *p = j;
 
 lw t0, 0(s0)      @ Load value at address in p into t0
