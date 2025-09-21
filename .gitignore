@@ -1,0 +1,26 @@
+# Ignore ECE250 assignments folder
+ECE250/Assignments/
+
+# Optional: Ignore specific file types commonly found in assignments
+*.exe
+*.o
+*.obj
+*.out
+a.out
+
+# Ignore compiled binaries and build artifacts
+*.dll
+*.so
+*.dylib
+
+# Ignore IDE files
+.vscode/
+*.code-workspace
+
+# Ignore temporary files
+*.tmp
+*.temp
+*~
+
+# Ignore log files
+*.log
