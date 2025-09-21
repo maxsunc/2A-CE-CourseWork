@@ -37,4 +37,18 @@ int main()
     std::cout << example << std::endl;
     std::cin >> example; // reads until space again
     std::cout << example << std::endl;
+
+    // 2d arrays
+    int **arr = new int *[10]; // array of 10 int pointers
+    for (int i = 0; i < 10; ++i)
+    {
+        arr[i] = new int[10]; // each int pointer points to an array of 10 ints
+    }
+
+    // Don't forget to delete the allocated memory
+    for (int i = 0; i < 10; ++i)
+    {
+        delete[] arr[i];
+    }
+    delete[] arr;
 }
