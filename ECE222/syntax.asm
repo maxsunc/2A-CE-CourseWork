@@ -25,3 +25,20 @@ li x7, 30         # x7 = 30 (load immediate)
     addi x1, x1, 1 # increment x1
     sw x1, 4(x8)  # store x1 back into A[1]
     
+
+
+/* RISC-V arithmetic instructions
+    add = addition
+    sub = subtraction
+    mul = multiplication
+    div = division
+    and = bitwise AND
+    or = bitwise OR
+    xor = bitwise XOR
+    sll = shift left logical   # can be used for multiplication by powers of 2
+
+
+
+;     Signed (bge, blt, jg, jl, idiv, imul) → treat MSB as sign.
+
+; Unsigned (bgeu, bltu, ja, jb, div, mul) → treat MSB as part of the magnitude.
