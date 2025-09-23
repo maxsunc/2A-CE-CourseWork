@@ -60,6 +60,10 @@ int main()
 
 // Example of a simple binary search tree implementation in C++
 
+// foreach node, the left node is less than the current node, and the right node is greater than the current node
+// always traverse
+
+// this is just a tree tho
 class BSTNode
 {
 public:
@@ -69,3 +73,26 @@ public:
 
     BSTNode(int val) : value(val), left(nullptr), right(nullptr) {}
 };
+
+bool searchABST(TreeNode *root, int target)
+{
+
+    if (root == nullptr)
+    {
+        return false;
+    }
+    else if (root->value == target)
+    {
+        return true;
+    }
+    else if (root->value < target)
+    {
+        // go to the right cuz our target is bigger than the current node
+        return searchABST(root->right, target);
+    }
+    else if (root->value > target)
+    {
+        // go to the left cuz our target is smaller than the current node
+        return searchABST(root->left, target);
+    }
+}
