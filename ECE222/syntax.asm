@@ -42,3 +42,12 @@ li x7, 30         # x7 = 30 (load immediate)
 ;     Signed (bge, blt, jg, jl, idiv, imul) → treat MSB as sign.
 
 ; Unsigned (bgeu, bltu, ja, jb, div, mul) → treat MSB as part of the magnitude.
+
+; loops
+addi x9, x9, 0      # i = 0
+addi x10, x0, 10    # n = 10
+loop: 
+    bge x9, x10, end_loop
+    addi x9, x9, 1
+    j loop ; loops back to the beginning of the loop
+end_loop:
