@@ -68,3 +68,18 @@ end_loop:
 equal:
     add x7, x5, x6
 end_if:
+
+
+; Jump table
+    li x12, 3   # upper bound for jump table
+    bgeu x10, x12, default_case  # if x10 >= 3, go to default case
+    la x13, jump_table  # load address of jump table
+    slli x12, x10, 2  # multiply x10 by 4 (size of each address)
+    add x13, x13, x12  # get address of jump table entry
+    lw x13, 0(x13)  # load address from jump table
+    jr x13  # jump to address jump_table + offset (x10 * 4)
+
+    jump_table:
+        .word case0     # address of code for case 0 is at index 0
+        .word case1     # address of code for case 1 is at index 1
+        .word case2     # address of code for case 2 is at index 2
