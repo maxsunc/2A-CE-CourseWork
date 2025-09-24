@@ -96,3 +96,24 @@ bool searchABST(TreeNode *root, int target)
         return searchABST(root->left, target);
     }
 }
+
+// insert a value into the BST
+BSTNode *insertIntoBST(BSTNode *root, int val)
+{
+    if (root == nullptr)
+    {
+        return new BSTNode(val);
+    }
+
+    if (val < root->value)
+    {
+        root->left = insertIntoBST(root->left, val);
+    }
+    else if (val > root->value)
+    {
+        root->right = insertIntoBST(root->right, val);
+    }
+    // if val == root->value, do nothing (no duplicates in this BST)
+
+    return root;
+}
