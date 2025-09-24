@@ -51,3 +51,20 @@ loop:
     addi x9, x9, 1
     j loop ; loops back to the beginning of the loop
 end_loop:
+
+/* RISC-V conditional branches
+    beq = branch if equal
+    bne = branch if not equal
+    blt = branch if less than
+    bge = branch if greater than or equal
+    bltu = branch if less than unsigned
+    bgeu = branch if greater than or equal unsigned
+    */
+
+    /* Example: if (x5 == x6) x7 = x5 + x6; else x7 = x5 - x6; */
+    beq x5, x6, equal
+    sub x7, x5, x6  # else part
+    j end_if ; jump to end of if
+equal:
+    add x7, x5, x6
+end_if:
