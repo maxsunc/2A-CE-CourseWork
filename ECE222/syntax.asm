@@ -71,6 +71,13 @@ end_if:
 
 
 ; Jump table
+; jump table is like an index of addresses to jump to (array)
+; switch (x10) {
+;     case 0: ... break;
+;     case 1: ... break;
+;     case 2: ... break;
+;     default: ... break;
+; }
     li x12, 3   # upper bound for jump table
     bgeu x10, x12, default_case  # if x10 >= 3, go to default case
     la x13, jump_table  # load address of jump table
@@ -80,6 +87,33 @@ end_if:
     jr x13  # jump to address jump_table + offset (x10 * 4)
 
     jump_table:
-        .word case0     # address of code for case 0 is at index 0
-        .word case1     # address of code for case 1 is at index 1
-        .word case2     # address of code for case 2 is at index 2
+        case0     # address of code for case 0 is at index 0
+        case1     # address of code for case 1 is at index 1
+        case2     # address of code for case 2 is at index 2
+
+
+; Fi
+
+
+
+
+; Calling functions; jal = jump and link (used to call functions)
+; jalr = jump and link register (used to return from functions)
+; jal x1, function_name  # jump to function_name and store return address in x1
+; ... function code ...
+
+
+
+
+function:
+    # function code here
+    addi x5, x5, 1
+    jr ra  ; jumps to ra + 4
+
+
+jal ra, function
+
+
+
+
+
