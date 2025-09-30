@@ -111,7 +111,10 @@ function:
     jr ra  ; jumps to ra + 4
 
 
+
 jal ra, function
+
+
 
 
 
