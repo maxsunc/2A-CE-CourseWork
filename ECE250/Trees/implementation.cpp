@@ -117,3 +117,15 @@ BSTNode *insertIntoBST(BSTNode *root, int val)
 
     return root;
 }
+
+// avl tree
+class avlNode
+{
+public:
+    int value;
+    avlNode *left;
+    avlNode *right;
+    int height;
+
+    avlNode(int val) : value(val), left(nullptr), right(nullptr), height(1) {}
+};
