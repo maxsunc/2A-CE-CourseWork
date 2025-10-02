@@ -12,6 +12,7 @@ li x7, 30         # x7 = 30 (load immediate)
     sw = store word (4 bytes) writes data from register to memory
     lb = load byte (1 byte) brings 1 byte from memory to register
     sb = store byte (1 byte) writes 1 byte from register to memory
+    la = load an address into somewhere
     */
 
     /* load word / store word example */

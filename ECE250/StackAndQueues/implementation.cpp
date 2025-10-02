@@ -124,7 +124,7 @@ public:
         {
             throw std::out_of_range("Queue is empty");
         }
-        front = (front + 1) % capacity;
+        front = (front + 1) % capacity; // circular logic(loops around)
         count--;
     }
 
@@ -147,3 +147,18 @@ public:
         return count;
     }
 };
+
+
+
+int main(){
+    int a = 45;
+    int tmp = a;
+
+    a = 35;
+    // use a
+
+    // set a back
+    a = tmp;
+
+    // sp is just used as tmp here always
+}
