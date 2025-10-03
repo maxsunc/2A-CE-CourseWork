@@ -47,5 +47,8 @@ main()
     delete[] dynArray;   // mark memory here as free
     dynArray = newArray; // point to new array
 
+    int &ref = newArray[0];
+    int copy = newArray[0];
+
     return 0;
 }
