@@ -118,6 +118,114 @@ BSTNode *insertIntoBST(BSTNode *root, int val)
     return root;
 }
 
+BSTNode *findMin(BSTNode *node)
+{
+    while (node->left != nullptr)
+    {
+        node = node->left;
+    }
+    return node;
+}
+
+BSTNode *deleteNode(BSTNode *root, BSTNode *key)
+{
+    if (root == nullptr)
+    {
+        return root;
+    }
+
+    if (key->value < root->value)
+    {
+        root->left = deleteNode(root->left, key);
+    }
+    else if (key->value > root->value)
+    {
+        root->right = deleteNode(root->right, key);
+    }
+    else
+    {
+        // // we are at the node to be deleted
+
+        // check for no child
+        if (root->left == nullptr && root->right == nullptr)
+        {
+            // delete it with no constraints
+            delete root;
+            root = nullptr;
+            return root;
+        }
+
+        // check for both children active
+        if (root->left != nullptr && root->right != nullptr)
+        {
+            // find the successor of this node
+            BSTNode *successor = getSuccessor(root, key);
+            // wtf why is thisso hard
+        }
+
+        // // Node with only one child or no child
+        // if (root->left == nullptr) {
+        //     BSTNode* temp = root->right;
+        //     delete root;
+        //     return temp;
+        // } else if (root->right == nullptr) {
+        //     BSTNode* temp = root->left;
+        //     delete root;
+        //     return temp;
+        // }
+
+        // // Node with two children: Get the inorder successor (smallest in the right subtree)
+        // BSTNode* temp = findMin(root->right);
+
+        // // Copy the inorder successor's content to this node
+        // root->value = temp->value;
+
+        // // Delete the inorder successor
+        // root->right = deleteNode(root->right, temp->value);
+    }
+    return root;
+}
+
+BSTNode *getSuccessor(BSTNode *root, BSTNode *node)
+{
+    // value that is one higher then us
+    if (node->right != nullptr)
+    {
+        return findMin(node->right);
+    }
+    else
+    {
+        // there is nobody to the right of us
+        // go up until we can find someone bigger
+        BSTNode *successor = nullptr; // update until find best value
+        BSTNode *current = root;
+
+        while (current != nullptr)
+        {
+
+            if (current->value > node->value)
+            {
+                // update successor
+                successor = current;
+                // update current to look for another successor (how much lower can we go?)
+                current = current->left;
+            }
+            else if (current->value < node->value)
+            {
+                // we went too low I think we're done
+                // there could a version on the right that works
+                current = current->right;
+            }
+            else
+            {
+                // we found our node
+                break;
+            }
+        }
+        return successor;
+    }
+}
+
 // avl tree
 class avlNode
 {
