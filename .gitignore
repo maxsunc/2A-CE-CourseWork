@@ -1,5 +1,6 @@
 # Ignore ECE250 assignments folder
 ECE250/Assignments/
+ECE222/Labs/
 
 # Optional: Ignore specific file types commonly found in assignments
 *.exe

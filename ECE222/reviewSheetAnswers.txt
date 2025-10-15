@@ -1,0 +1,45 @@
+# order goes backwards
+CALL:
+Compiler: Primary input is .c file foo.c outputs a foo.asm an assembly file
+Compiler changes C code into assembly but keep pseudoinstructions existing
+
+Assembler: Input is foo.asm outputs an obj file foo.obj
+the file is in machine code, it translates what it can into machine code (binary)
+For banch commands that are PC relative (in the same file):
+Takes a two pass
+two passes
+One pass: Builds map of all labels used
+2nd Pass: Translates using the map each PC relative instruction into the right address
+
+but there are something it cant do, for example an address couold be
+an absolute address (able to be accessed by other files) that address is not
+yet determined, so it does the following:
+Create Symbol Table
+List of all absolute addresses used (not PC relative)
+Relocation Table:
+List of all places where absolute addresses were used and their offsets
+Fill in the blank later for linker
+symbol = memory address
+All the stuff in an object file:
+1. Header: table of contents of the object file, helps linked traverse obj file
+2. .text machine code\
+3. .data: contains all data created in the assembly program ( addresses and linker and stuff)
+(static data here means )
+4. symbol table: List of labels, static data that can be referenced by other programs
+5. relocation table: Fill in the blank for the linker6 deubgging info
+Static data = data not created while the program is running (like variables on the stack or heap) already defined data
+
+The object file is not yet executable because it could use symbols aka memory addresses that are NOT PC relative, aka addresses outside of the file or in another file
+
+
+The linker:
+Symbol Resolution:
+make a list of each global symbols and their pc relative offsets 
+relative to the current file we're linking (not yet absolute address yet)
+
+relocation:
+returns absolute addresses for each of the global symbols
+
+code patch: fills in the blanks for the absolute addresses
+
+The Loader:

@@ -1,0 +1,37 @@
+    li t0, 5952
+    li t1, 7488
+
+    ; fills with 0s
+    li t4, 0x80000000
+    sw t0, 4(t4)
+
+    sw t1, 8(t4)
+
+
+    
+
+    # find the smallest value
+    blt t0, t1, first
+    # t1 is less than t0
+    mv t3, t0
+    mv t0, t1
+    mv t1, t3
+
+    j skip
+
+    first:
+    
+    skip:
+
+    loop: 
+
+        rem t3, t1, t0
+        beqz t3, exit
+        # do remainder onto t0 and remainder (t1 always > t0)
+        mv t1, t0 # 
+        mv t0, t3 # divisor
+        j loop
+
+    exit:
+    
+    sw t0, 16(t4)
